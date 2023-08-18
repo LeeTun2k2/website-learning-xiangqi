@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="vi">
       <CssBaseline />
       <link rel="icon" href="/favicon.ico" sizes="any" />
-      <meta name="robots" content="noindex"/>
+      <meta name="robots" content="nofollow"/>
       <body className={inter.className}>{children}</body>
     </html>
   )
