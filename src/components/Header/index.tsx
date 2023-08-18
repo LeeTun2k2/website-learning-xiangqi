@@ -85,12 +85,11 @@ export default function ResponsiveAppBar() {
           <Box sx={{display: { xs: 'none', md: 'none', lg: 'flex' }}}>
             <Image 
               src={Logo}
-              alt=""
+              alt="Cờ tướng"
               width={80}
               />
           </Box>
           <Typography
-            variant="h1"
             noWrap
             component="a"
             href="/"

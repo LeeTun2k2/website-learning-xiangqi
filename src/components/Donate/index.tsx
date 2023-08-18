@@ -31,17 +31,17 @@ export default function Donate() {
                 <Box sx={{display: 'flex', justifyContent: 'space-evenly', width: "75%"}}>
                     <Image 
                         src={ImageHappyBoy}
-                        alt=""
+                        alt="Cờ tướng"
                         width={70}
                     />
                     <Image 
                         src={ImageThankYou}
-                        alt=""
+                        alt="Cờ tướng"
                         width={65}
                     />
                     <Image 
                         src={ImageHappyGirl}
-                        alt=""
+                        alt="Cờ tướng"
                         width={70}
                     />
                 </Box>
