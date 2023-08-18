@@ -16,10 +16,11 @@ export default function Donate() {
                 backgroundColor: "#ad917f",
                 borderRadius: ".4rem",
                 boxShadow: 3,
-                display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexDirection: "column"
+                flexDirection: "column",
+                display: {xs: "flex", md: "none", lg: 'flex'},
+                marginBottom: {xs: "1.6rem", md: "3.2rem"}
             }}>                
                 <Typography variant="h4" sx={{
                     color: "#fff",

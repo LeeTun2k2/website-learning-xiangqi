@@ -77,25 +77,28 @@ export default function ResponsiveAppBar() {
     <AppBar 
       position="static" 
       sx={{
-          padding: {md: '0 15rem', xs: '0: 6rem'},
+          padding: {md: '0 15rem', xs: '0 6rem'},
           backgroundColor: '#FFF', 
           boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Image 
-            src={Logo}
-            alt=""
-            width={80}
-          />
+          <Box sx={{display: { xs: 'none', md: 'none', lg: 'flex' }}}>
+            <Image 
+              src={Logo}
+              alt=""
+              width={80}
+              />
+          </Box>
           <Typography
-            variant="h5"
+            variant="h1"
             noWrap
             component="a"
             href="/"
             sx={{
               mr: 2,
               ml: 1,
-              display: { xs: 'none', md: 'flex' },
+              display: { xs: 'none', md: 'none', lg: 'flex' },
+              fontSize: '1.8rem',
               fontWeight: 700,
               letterSpacing: '.2rem',
               color: '#000',
@@ -105,7 +108,7 @@ export default function ResponsiveAppBar() {
             DẠY CỜ TƯỚNG
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex', lg: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -141,17 +144,17 @@ export default function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, color: '#000' }} />
           <Typography
-            variant="h5"
+            variant="h1"
             noWrap
             component="a"
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'flex', md: 'flex', lg: 'none' },
               flexGrow: 1,
               fontWeight: 700,
+              fontSize: '1.8rem',
               letterSpacing: '.2rem',
               color: '#000',
               textDecoration: 'none',
@@ -159,7 +162,7 @@ export default function ResponsiveAppBar() {
           >
             DẠY CỜ TƯỚNG
           </Typography>
-          <Box sx={{ flexGrow: 1, ml: '1.6rem', display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, ml: '1.6rem', display: { xs: 'none', md: 'none', lg: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -171,7 +174,7 @@ export default function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0, display: 'flex' }}>
+          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }}}>
             <Search>
               <SearchIconWrapper>
                 <SearchIcon sx={{color: '#000', fontSize: "2rem"}}/>

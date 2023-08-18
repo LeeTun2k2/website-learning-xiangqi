@@ -13,9 +13,9 @@ export default function ListArticles(props:TListArticlesProps) {
         padding: "1.6rem 1.6rem 0 1.6rem",
         borderRadius: ".8rem",
         overflow: "hidden",
-        marginBottom: {sx: "1.6rem", md: "3.2rem"},
+        // marginBottom: {xs: "1.6rem", md: "3.2rem"},
         }}>
-      <Typography sx={{
+      <Typography variant='h2' sx={{
         fontWeight: 600,
         fontSize: "1.8rem",
         borderLeft: ".5rem solid #cf2e2e",
@@ -47,7 +47,7 @@ export default function ListArticles(props:TListArticlesProps) {
                     />
                   {
                     <Typography 
-                      variant="h4" 
+                      variant="h3" 
                       sx={{
                         padding: "4px 12px", 
                         fontWeight: 500, 

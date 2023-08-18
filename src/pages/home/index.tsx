@@ -2,16 +2,27 @@ import { Grid } from '@mui/material';
 import FeaturedArticles from "@/components/FeaturedArticles";
 import ListArticles from '@/components/ListArticles';
 import Donate from '@/components/Donate';
+import { width } from '@mui/system';
 
 export default function Home() {
   return (
     <div className="home">
-      <Grid container spacing={2} padding={{xs: "1.6rem 6rem 0", md: "3.2rem 15rem 0"}}>
-        <Grid item xs={12} md={8}>
+      <Grid container spacing={2} padding={{xs: "1.6rem 0 0", lg: "3.2rem 15rem 0"}}>
+        <Grid item xs={12} md={8}
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between"
+            }}>
           <FeaturedArticles title={dataNguoiMoiNenXem.title} data={dataNguoiMoiNenXem.data}/>
           <FeaturedArticles title={dataBaiDangGanDay.title} data={dataBaiDangGanDay.data}/>
         </Grid> 
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={4} 
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between"
+            }}>
           <ListArticles title={dataTaiNguyen.title} data={dataTaiNguyen.data}/>
           <ListArticles title={dataTaiNguyen.title} data={dataTaiNguyen.data}/>
           <Donate/>
