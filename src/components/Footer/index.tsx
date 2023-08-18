@@ -5,7 +5,7 @@ import styles from './index.module.css'
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <Typography variant="h1" 
+      <Typography
         sx={{
           display: {xs: "none", md:"flex",},
           fontSize: "1.4rem",
