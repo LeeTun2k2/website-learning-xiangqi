@@ -15,7 +15,7 @@ export default function FeaturedArticles(props:TFeaturedArticlesProps) {
         overflow: "hidden",
         marginBottom: {xs: "1.6rem", md: "3.2rem"}
         }}>
-      <Typography variant='h2' sx={{
+      <Typography variant='h1' sx={{
         fontWeight: 600,
         fontSize: "1.8rem",
         borderLeft: ".5rem solid #cf2e2e",
@@ -54,7 +54,7 @@ export default function FeaturedArticles(props:TFeaturedArticlesProps) {
                   {
                     (index < 2) 
                     ? <Typography 
-                        variant="h3" 
+                        variant='h2' 
                         sx={{
                           position: "absolute", 
                           bottom: 0, 
@@ -70,7 +70,7 @@ export default function FeaturedArticles(props:TFeaturedArticlesProps) {
                         {item.title}
                       </Typography> 
                     : <Typography 
-                      variant="h3" 
+                      variant='h2' 
                       sx={{
                         padding: "4px 12px", 
                         fontWeight: 500, 
