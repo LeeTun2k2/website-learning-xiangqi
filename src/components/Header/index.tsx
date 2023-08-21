@@ -170,7 +170,7 @@ export default function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page.title}
-                onClick={() => {handleCloseNavMenu}}
+                onClick={() => {handleMenuItemOnClick(page)}}
                 sx={{ my: 2, color: '#000', display: 'flex', fontSize: '1.4rem', fontWeight: 500 }}
               >
                 {page.title}
