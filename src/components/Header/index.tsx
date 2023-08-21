@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import MenuIcon from '@mui/icons-material/Menu'; 
 import FacebookIcon from '@mui/icons-material/Facebook'; 
-import YoutubeIcon from '@mui/icons-material/Youtube'; 
+import YoutubeIcon from '@mui/icons-material/YouTube'; 
 import SearchIcon from '@mui/icons-material/Search'; 
 import Logo from '@/assets/images/logo.png';
 
