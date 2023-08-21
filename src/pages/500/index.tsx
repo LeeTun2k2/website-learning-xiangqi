@@ -1,4 +1,4 @@
-import { Box, Button, Container, Link, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
 export default function Error() {
@@ -12,7 +12,7 @@ export default function Error() {
       }}
     >
       <Container maxWidth="md">
-          <Grid sx={{
+          <Grid xs={6} sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -20,14 +20,11 @@ export default function Error() {
             marginTop: "-8rem"
           }}>
             <Typography variant="h1">
-              404
+              500
             </Typography>
             <Typography variant="h6" sx={{margin: "1.6rem"}}>
-              Địa chỉ không chính xác !
+              Máy chủ đang lỗi, vui lòng thử lại sau vài phút !
             </Typography>
-            <Button variant="contained" sx={{backgroundColor: "#000"}}>
-                <Link href="/" sx={{color: "#fff", textDecoration: "none"}}>Trang chủ</Link>
-            </Button>
           </Grid>
       </Container>
     </Box>

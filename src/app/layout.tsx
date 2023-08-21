@@ -1,7 +1,6 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import CssBaseline from '@mui/material/CssBaseline';
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi">
-      <CssBaseline />
       <link rel="icon" href="/favicon.ico" sizes="any" />
       <meta name="robots" content="nofollow"/>
       <body className={inter.className}>{children}</body>

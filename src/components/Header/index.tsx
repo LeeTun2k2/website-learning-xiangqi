@@ -1,25 +1,24 @@
-"use client";
+'use client';
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+import { AppBar, Box, Button, Container, IconButton, InputBase, Menu, MenuItem, Toolbar, Typography, alpha, styled } from '@mui/material';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import SearchIcon from '@mui/icons-material/Search';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import YoutubeIcon from '@mui/icons-material/YouTube';
+import MenuIcon from '@mui/icons-material/Menu'; 
+import FacebookIcon from '@mui/icons-material/Facebook'; 
+import YoutubeIcon from '@mui/icons-material/Youtube'; 
+import SearchIcon from '@mui/icons-material/Search'; 
 import Logo from '@/assets/images/logo.png';
 
-const pages = ['NHẬP MÔN', 'SÁT PHÁP CƠ BẢN', "CHUYỆN CỜ TƯỚNG"];
+type TPage = {
+  title: string;
+  path: string;
+}
+
+const pages: TPage[] = [
+  {title: 'KHÓA HỌC', path: '/course'},
+  {title: 'ĐANG HỌC', path: '/lesson'},
+  {title: 'ỦNG HỘ', path: ''},
+]
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,6 +62,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function ResponsiveAppBar() {
+  const router = useRouter();
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -73,26 +74,30 @@ export default function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+  const handleMenuItemOnClick = (page: TPage) => {
+    router.push(page.path);
+  }
+
   return (
     <AppBar 
-      position="static" 
+      position='static' 
       sx={{
-          padding: {md: '0 15rem', xs: '0 6rem'},
+          padding: {md: '0 15rem', xs: '0'},
           backgroundColor: '#FFF', 
           boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);'}}>
-      <Container maxWidth="xl">
+      <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <Box sx={{display: { xs: 'none', md: 'none', lg: 'flex' }}}>
             <Image 
               src={Logo}
-              alt="Cờ tướng"
+              alt='Cờ tướng'
               width={80}
               />
           </Box>
           <Typography
             noWrap
-            component="a"
-            href="/"
+            component='a'
+            href='/'
             sx={{
               mr: 2,
               ml: 1,
@@ -109,17 +114,17 @@ export default function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex', lg: 'none' } }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
               onClick={handleOpenNavMenu}
               sx={{color: '#000'}}
             >
-              <MenuIcon sx={{color: '#000'}}/>
+              <MenuIcon sx={{color: '#000', fontSize: 25}}/>
             </IconButton>
             <Menu
-              id="menu-appbar"
+              id='menu-appbar'
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
@@ -137,17 +142,17 @@ export default function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.title} onClick={() => {handleMenuItemOnClick(page)}}>
+                  <Typography sx={{textAlign:'center', fontSize: '1.4rem'}}>{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           <Typography
-            variant="h1"
+            variant='h1'
             noWrap
-            component="a"
-            href="/"
+            component='a'
+            href='/'
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'flex', lg: 'none' },
@@ -164,11 +169,11 @@ export default function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, ml: '1.6rem', display: { xs: 'none', md: 'none', lg: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.title}
+                onClick={() => {handleCloseNavMenu}}
                 sx={{ my: 2, color: '#000', display: 'flex', fontSize: '1.4rem', fontWeight: 500 }}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
@@ -176,12 +181,12 @@ export default function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }}}>
             <Search>
               <SearchIconWrapper>
-                <SearchIcon sx={{color: '#000', fontSize: "2rem"}}/>
+                <SearchIcon sx={{color: '#000', fontSize: '2rem'}}/>
               </SearchIconWrapper>
               <StyledInputBase
-                placeholder="Tìm kiếm"
+                placeholder='Tìm kiếm'
                 inputProps={{ 'aria-label': 'search' }}
-                sx={{fontSize: "1.4rem"}}
+                sx={{fontSize: '1.4rem'}}
               />
             </Search>
             <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
