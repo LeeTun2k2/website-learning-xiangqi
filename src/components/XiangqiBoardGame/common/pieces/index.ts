@@ -12,17 +12,11 @@ import rK_Image from "./rK.svg";
 import rN_Image from "./rN.svg";
 import rP_Image from "./rP.svg";
 import rR_Image from "./rR.svg";
-
-export type TPiece = {
-    name: string;
-    image: any;
-    row: number;
-    col: number;
-    isOnBoard: boolean;
-}
+import { TPiece } from "../../types";
 
 export const bA: TPiece = {
-    name: "bA",
+    name: "A",
+    color: "b",
     image: bA_Image,
     row: 0,
     col: 0,
@@ -30,7 +24,8 @@ export const bA: TPiece = {
 }
 
 export const bB: TPiece = {
-    name: "bB",
+    name: "B",
+    color: "b",
     image: bB_Image,
     row: 0,
     col: 0,
@@ -38,7 +33,8 @@ export const bB: TPiece = {
 }
 
 export const bC: TPiece = {
-    name: "bC",
+    name: "C",
+    color: "b",
     image: bC_Image,
     row: 0,
     col: 0,
@@ -46,7 +42,8 @@ export const bC: TPiece = {
 }
 
 export const bK: TPiece = {
-    name: "bK",
+    name: "K",
+    color: "b",
     image: bK_Image,
     row: 0,
     col: 0,
@@ -54,7 +51,8 @@ export const bK: TPiece = {
 }
 
 export const bN: TPiece = {
-    name: "bN",
+    name: "N",
+    color: "b",
     image: bN_Image,
     row: 0,
     col: 0,
@@ -62,7 +60,8 @@ export const bN: TPiece = {
 }
 
 export const bR: TPiece = {
-    name: "bR",
+    name: "R",
+    color: "b",
     image: bR_Image,
     row: 0,
     col: 0,
@@ -70,7 +69,8 @@ export const bR: TPiece = {
 }
 
 export const bP: TPiece = {
-    name: "bP",
+    name: "P",
+    color: "b",
     image: bP_Image,
     row: 0,
     col: 0,
@@ -78,7 +78,8 @@ export const bP: TPiece = {
 }
 
 export const rA: TPiece = {
-    name: "rA",
+    name: "A",
+    color: "w",
     image: rA_Image,
     row: 0,
     col: 0,
@@ -86,7 +87,8 @@ export const rA: TPiece = {
 }
 
 export const rB: TPiece = {
-    name: "rB",
+    name: "B",
+    color: "w",
     image: rB_Image,
     row: 0,
     col: 0,
@@ -94,7 +96,8 @@ export const rB: TPiece = {
 }
 
 export const rC: TPiece = {
-    name: "rC",
+    name: "C",
+    color: "w",
     image: rC_Image,
     row: 0,
     col: 0,
@@ -102,7 +105,8 @@ export const rC: TPiece = {
 }
 
 export const rK: TPiece = {
-    name: "rK",
+    name: "K",
+    color: "w",
     image: rK_Image,
     row: 0,
     col: 0,
@@ -110,7 +114,8 @@ export const rK: TPiece = {
 }
 
 export const rN: TPiece = {
-    name: "rN",
+    name: "N",
+    color: "w",
     image: rN_Image,
     row: 0,
     col: 0,
@@ -118,7 +123,8 @@ export const rN: TPiece = {
 }
 
 export const rR: TPiece = {
-    name: "rR",
+    name: "R",
+    color: "w",
     image: rR_Image,
     row: 0,
     col: 0,
@@ -126,7 +132,8 @@ export const rR: TPiece = {
 }
 
 export const rP: TPiece = {
-    name: "rP",
+    name: "P",
+    color: "w",
     image: rP_Image,
     row: 0,
     col: 0,

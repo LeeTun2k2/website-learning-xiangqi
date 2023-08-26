@@ -1,6 +1,7 @@
-import { TPiece,bA,bB,bC,bK,bN,bR,bP,rA,rB,rC,rK,rN,rR,rP,} from "../common/pieces";
+import { TPiece } from "../types";
+import {bA,bB,bC,bK,bN,bR,bP,rA,rB,rC,rK,rN,rR,rP,} from "../common/pieces";
 
-export function FEN_to_pieces(FEN: string = "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w - - 0 1"): {pieces: TPiece[]; turnOf: string;} {
+export function FEN_to_pieces(FEN: string = "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w - - 0 1"): {pieces: TPiece[]; firstMove: string;} {
     const pieces: TPiece[] = [];
     const data = FEN.trim().split(" ")
     const rows = data[0].split("/");
@@ -77,7 +78,7 @@ export function FEN_to_pieces(FEN: string = "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P
         }
     }
 
-    const turnOf = data[1]
+    const firstMove = data[1];
 
-    return { pieces, turnOf };
+    return { pieces, firstMove };
 }

@@ -17,17 +17,9 @@ const data = [
         paragraphIFrame: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_zzLqWCGGck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
         // paragraphIFrame: null,
         paragraphPGN: `
-        [Event "?"]
-        [Site "https://www.pychess.org/analysis/xiangqi"]
-        [Date "2023.08.24"]
-        [White "?"]
-        [Black "?"]
-        [Result "*"]
-        [Variant "Xiangqi"]
-        [FEN "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR b - - 0 1"]
-        [SetUp "1"]
-
-        1...Che8 2.Ch9 Cxe4 3.Cd3 Cb5 4.Cd5 Cb6 5.Ce5+ Ce6 6.Ke2 Cf4+ 7.Ch5 Ce5+ 8.Ke1 Cfe4# *
+        [FEN "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w - - 0 1"]
+        
+        P7+1 P7+1 C2=3 C8=5 P7+1 *
         `,
       },
       {

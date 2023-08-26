@@ -1,9 +1,7 @@
 export function PGN_string_to_dictionary(PGN: string) {
     const pgnData: { [key: string]: string | string[] } = {};
-  
     const PGN_Array = PGN.trim().split('\n').map(line => line.trim());
-  
-    const data: string[] = [];
+    const moves: string[] = [];
 
     for (const line of PGN_Array) {
       const match = line.match(/\[(\w+)\s+"([^"]+)"\]/);
@@ -12,20 +10,15 @@ export function PGN_string_to_dictionary(PGN: string) {
         pgnData[key] = value;
       } 
       else if (line.trim() !== "") {
-          const trimLine = line.replace('...', '.')
-          const moveSequences = trimLine.split(/\d+\./).filter(sequence => sequence.trim() !== "");
-          
-        moveSequences.forEach((sequence) => {
-            const moves = sequence.trim().split(/\s+/);
-            moves.forEach((move) => {
-                data.push(move)
-            })
-        });
+          const m = line.trim().split(" ");
+          for (const _ of m) {
+              moves.push(_);
+          }
       }
     }
-  
-    pgnData["data"] = data;
-  
+    moves.pop();
+    pgnData["moves"] = moves;
     return pgnData;
   }
+
   
